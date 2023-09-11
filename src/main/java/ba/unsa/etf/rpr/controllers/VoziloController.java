@@ -1,74 +1,73 @@
 package ba.unsa.etf.rpr.controllers;
 
-import ba.unsa.etf.rpr.business.IznajmljivanjeManager;
 import ba.unsa.etf.rpr.business.VoziloManager;
-import ba.unsa.etf.rpr.dao.IznajmljivanjeSQLImpl;
+import ba.unsa.etf.rpr.dao.VoziloDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Vozilo;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.io.IOException;
 import java.util.Optional;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class VoziloController {
     private final VoziloManager voziloManager=new VoziloManager();
-    @FXML
-    public BorderPane voziloScreen;
 
 
-    public TableView tableViewVozila;
-    public TextField search;
-    public TableColumn<Vozilo, Integer> columnVoziloId;
-    public TableColumn<Vozilo, String> columnVoziloNaziv;
-    public TableColumn<Vozilo, String> columnVoziloGorivo;
-    public TableColumn<Vozilo, String> columnVoziloMjenjac;
-    public TableColumn<Vozilo, Integer> columnVoziloMaxBrPutnika;
-    public TableColumn<Vozilo, Integer> columnVoziloCijenaPoDanu;
-    public TableColumn<Vozilo, String> columnVoziloBrojRegTablica;
-    public TableColumn<Vozilo, String> columnVoziloTip;
+    public TextField naziv;
+    public ComboBox<String> gorivo;
+    public ComboBox<String> mjenjac;
+    public ComboBox<Integer> maxbrputnika;
+    public TextField cijenapodanu;
+    public TextField brojregtablica;
+    public ComboBox<String> tip;
 
+    private Vozilo vozilo;
+
+    public VoziloController(Vozilo vozilo) {
+        this.vozilo=vozilo;
+    }
+@FXML
     public void initialize(){
-        columnVoziloId.setCellValueFactory(new PropertyValueFactory<Vozilo, Integer>("id"));
-        columnVoziloNaziv.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("Naziv"));
-        columnVoziloGorivo.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("gorivo"));
-        columnVoziloMjenjac.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("mjenjac"));
-        columnVoziloMaxBrPutnika.setCellValueFactory(new PropertyValueFactory<Vozilo, Integer>("putnici"));
-        columnVoziloCijenaPoDanu.setCellValueFactory(new PropertyValueFactory<Vozilo, Integer>("cijena"));
-        columnVoziloBrojRegTablica.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("tablice"));
-        columnVoziloTip.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("tip"));
+       if(vozilo!=null){
+           naziv.setText(vozilo.getNaziv());
+           gorivo.setValue(vozilo.getGorivo());
+           mjenjac.setValue(vozilo.getMjenjac());
+           maxbrputnika.setValue(vozilo.getMaxbrputnika());
+           cijenapodanu.setText(Integer.toString(vozilo.getCijenapodanu()));
+           brojregtablica.setText(vozilo.getBrojregtablica());
+           tip.setValue(vozilo.getTip());
 
-        refreshVozila();
+       }
 
     }
-    public void searchVozila(ActionEvent event){
+    /*public void searchVozila(ActionEvent event){
         try {
-            tableViewVozila.setItems(FXCollections.observableList(voziloManager.searchVozilo(search.getText())));
-            tableViewVozila.refresh();
+            tabelaVozila.setItems(FXCollections.observableList(voziloManager.searchVozilo(search.getText())));
+            tabelaVozila.refresh();
         }catch (Exception e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
         }
     }
     public void refreshVozila (){
         try{
-            tableViewVozila.setItems(FXCollections.observableList(voziloManager.getAll()));
-            tableViewVozila.refresh();
+            tabelaVozila.setItems(FXCollections.observableList(voziloManager.getAll()));
+            tabelaVozila.refresh();
         }catch (Exception e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
         }
 
-    }
-    public void delete(Integer id){
+    }*/
+
+    /*public void actionObrisi(Integer id){
         try {
             Alert confirmation=new Alert(Alert.AlertType.CONFIRMATION, "Sigurno obrisati");
             Optional<ButtonType> result=confirmation.showAndWait();
@@ -81,27 +80,32 @@ public class VoziloController {
         }
     }
 
-    public void updateScene(Integer id){
+    public void actionIzmijeni(ActionEvent event){
+        Vozilo vozilo=tabelaVozila.getSelectionModel().getSelectedItem();
+        if(vozilo==null) return;
+
+        Stage stage=new Stage();
+        Parent root=null;
         try {
-            ((Stage)voziloScreen.getScene().getWindow()).hide();
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/addupdatevozilo.fxml"));
+            //((Stage)voziloScreen.getScene().getWindow()).hide();
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/vozilo.fxml"));
+            VoziloController voziloController=new VoziloController();
             loader.setController(new AddUpdateVoziloController(id));
             Stage stage=new Stage();
             stage.setScene(new Scene(loader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.initStyle(StageStyle.UTILITY);
             stage.setTitle("Editovanje i dodavanje vozila za iznajmljivanje");
             stage.show();
-            stage.setOnHiding(event->{
-                ((Stage)voziloScreen.getScene().getWindow()).show();
-                refreshVozila();
-            });
+
         } catch (Exception e) {
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
         }
-    }
-    public void add(ActionEvent event){
-        updateScene(null);
-    }
+    }*/
+    //public void actionDodaj(ActionEvent event){
+public Vozilo getVozilo(){
+        return vozilo;
+}
+
 
 
 }

@@ -26,8 +26,7 @@ public class AddUpdateVoziloController {
     public TextField  columnVoziloBrojRegTablica;
     public ComboBox columnVoziloTip;
 
-    public AddUpdateVoziloController() {
-    }
+
 
     public AddUpdateVoziloController(Integer voziloId){
         this.voziloId=voziloId;

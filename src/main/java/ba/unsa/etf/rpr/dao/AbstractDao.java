@@ -18,7 +18,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     private static void createConnection() {
         if(AbstractDao.connection==null){
             try {
-                AbstractDao.connection= DriverManager.getConnection("jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644397", "sql7644397","lYJuudFhsQ");
+                AbstractDao.connection= DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_IDCardGeneratorDB?sessionVariables=WAIT_TIMEOUT=28800", "freedb_mkurtovic1","B#B$2QPH$!KDWqb");
             } catch (SQLException e) {
                 e.printStackTrace();
             }finally {

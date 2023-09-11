@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-import ba.unsa.etf.rpr.controllers.AddUpdateVoziloController;
+import ba.unsa.etf.rpr.controllers.GlavnaController;
 import ba.unsa.etf.rpr.controllers.VoziloController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,12 +23,12 @@ public class App extends Application
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addupdatevozilo.fxml"));
-        AddUpdateVoziloController addUpdateVoziloController =new AddUpdateVoziloController();
-        loader.setController(addUpdateVoziloController);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavna.fxml"));
+        GlavnaController glavnaController=new GlavnaController();
+        loader.setController(glavnaController);
         Parent root=loader.load();
 
-        stage.setTitle("Add and update vozilo");
+        stage.setTitle("Home");
         stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);//login forme da nisu promjenljive
         stage.show();
