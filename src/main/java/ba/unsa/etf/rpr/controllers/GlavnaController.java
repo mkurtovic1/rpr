@@ -21,7 +21,15 @@ import java.util.Optional;
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class GlavnaController {
-    private final VoziloManager voziloManager=new VoziloManager();
+    private VoziloManager voziloManager=new VoziloManager();
+    private Vozilo selectedVozilo;
+    public void setVoziloManager(VoziloManager voziloManager){
+        this.voziloManager=voziloManager;
+    }
+    public void setSelectedVozilo(Vozilo selectedVozilo){
+        this.selectedVozilo=selectedVozilo;
+        initialize();
+    }
 
     public TableView<Vozilo> tabelaVozila;
     public TextField search;
@@ -45,12 +53,12 @@ public class GlavnaController {
     public void initialize(){
         tabelaVozila.setItems(listVozilo);
         id.setCellValueFactory(new PropertyValueFactory<Vozilo, Integer>("id"));
-        naziv.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("Naziv"));
+        naziv.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("naziv"));
         gorivo.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("gorivo"));
         mjenjac.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("mjenjac"));
-        maxbrputnika.setCellValueFactory(new PropertyValueFactory<Vozilo, Integer>("putnici"));
-        cijenapodanu.setCellValueFactory(new PropertyValueFactory<Vozilo, Integer>("cijena"));
-        brojregtablica.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("tablice"));
+        maxbrputnika.setCellValueFactory(new PropertyValueFactory<Vozilo, Integer>("maxbrputnika"));
+        cijenapodanu.setCellValueFactory(new PropertyValueFactory<Vozilo, Integer>("cijenapodanu"));
+        brojregtablica.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("brojregtablica"));
         tip.setCellValueFactory(new PropertyValueFactory<Vozilo, String>("tip"));
 
         refreshVozila();
@@ -74,7 +82,8 @@ public class GlavnaController {
 
     }
 
-    public void actionObrisi(Integer id){
+    //ne treba metoda, jer necu brisat preko id nego cijelu kolonu
+    /*public void obrisiVozilo(Integer id){
         try {
             Alert confirmation=new Alert(Alert.AlertType.CONFIRMATION, "Sigurno obrisati");
             Optional<ButtonType> result=confirmation.showAndWait();
@@ -85,36 +94,44 @@ public class GlavnaController {
         } catch (Exception e) {
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
         }
-    }
+    }*/
 
-    public void actionIzmijeni(ActionEvent event){
-
+    public void izmijeniVozilo(ActionEvent actionEvent){
+        Vozilo vozilo=tabelaVozila.getSelectionModel().getSelectedItem();
+        if(vozilo==null) return;
         try {
+
             //((Stage)voziloScreen.getScene().getWindow()).hide();
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/vozilo.fxml"));
-            Stage stage=new Stage();
-            stage.setScene(new Scene(loader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.initStyle(StageStyle.UTILITY);
-            stage.setTitle("Editovanje i dodavanje vozila za iznajmljivanje");
-            stage.show();
+            //get the controller associated with fxml
 
-            Vozilo vozilo= new Vozilo();
-            vozilo.setNaziv(naziv.getText());
-            vozilo.setGorivo(gorivo.getText());
-            vozilo.setMjenjac(mjenjac.getText());
-            vozilo.setMaxbrputnika(Integer.parseInt(maxbrputnika.getText()));
-            vozilo.setCijenapodanu(Integer.parseInt(cijenapodanu.getText()));
-            vozilo.setBrojregtablica(brojregtablica.getText());
-            vozilo.setTip(tip.getText());
-            voziloManager.update(vozilo);
-            refreshVozila();
+            Parent root=loader.load();
+            AddUpdateVoziloController voziloController=loader.getController();
+           if(voziloController!=null){
+               voziloController.setVozilo(vozilo);
+               Stage stage=new Stage();
+               stage.setTitle("Izmijeni");
+               stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+               stage.showAndWait();
+
+           }
+           else
+               System.err.println("Controller is null");
+            //loader.setController(voziloController);
+
+
+           // selectedVozilo=voziloController.getModifiedVozilo();
+
+
+
+            //refreshVozila();
 
 
         } catch (Exception e) {
-            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+            new Alert(Alert.AlertType.NONE, "Error loading vozilo.fxml", ButtonType.OK).show();
         }
     }
-    public void actionDodaj(ActionEvent actionEvent){
+    public void dodajVozilo(ActionEvent actionEvent){
 
         try {
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/vozilo.fxml"));
@@ -139,7 +156,7 @@ public class GlavnaController {
         }
     }
 
-    public void actionObrisi(ActionEvent actionEvent) throws Exception {
+    public void obrisiVozilo(ActionEvent actionEvent) throws Exception {
         Vozilo vozilo=tabelaVozila.getSelectionModel().getSelectedItem();
         if(vozilo==null) return;
 
@@ -155,7 +172,14 @@ public class GlavnaController {
             dao.delete(vozilo.getId());
             listVozilo.setAll(dao.getAll());
         }
+        refreshVozila();
     }
 
+    private void showAlert(Alert.AlertType alertType, String title, String contentText){
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setContentText(contentText);
+        alert.showAndWait();
+    }
 
 }

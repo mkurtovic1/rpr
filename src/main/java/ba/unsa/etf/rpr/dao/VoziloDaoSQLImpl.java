@@ -10,7 +10,7 @@ import java.util.TreeMap;
 public class VoziloDaoSQLImpl extends AbstractDao<Vozilo> implements VoziloDao {
     private static VoziloDaoSQLImpl instance=null;
     public VoziloDaoSQLImpl() {
-        super("vozila");
+        super("dbvozilo");
     }
     public static VoziloDaoSQLImpl getInstance(){
         if(instance==null)
@@ -30,9 +30,9 @@ public class VoziloDaoSQLImpl extends AbstractDao<Vozilo> implements VoziloDao {
             vozilo.setNaziv(resultSet.getString("naziv"));
             vozilo.setGorivo(resultSet.getString("gorivo"));
             vozilo.setMjenjac(resultSet.getString("mjenjac"));
-            vozilo.setMaxbrputnika(resultSet.getInt("brojputnika"));
-            vozilo.setCijenapodanu(resultSet.getInt("cijena_po_danu"));
-            vozilo.setBrojregtablica(resultSet.getString("registracijske_tablice"));
+            vozilo.setMaxbrputnika(resultSet.getInt("maxbrputnika"));
+            vozilo.setCijenapodanu(resultSet.getInt("cijenapodanu"));
+            vozilo.setBrojregtablica(resultSet.getString("brojregtablica"));
             vozilo.setTip(resultSet.getString("tip"));
             return vozilo;
         }catch (Exception e){
@@ -48,13 +48,13 @@ public class VoziloDaoSQLImpl extends AbstractDao<Vozilo> implements VoziloDao {
         item.put("gorivo", object.getGorivo());
         item.put("mjenjac", object.getMjenjac());
         item.put("maxbrputnika", object.getMaxbrputnika());
-        item.put("cijena po danu", object.getCijenapodanu());
-        item.put("registracijske tablice", object.getBrojregtablica());
+        item.put("cijenapodanu", object.getCijenapodanu());
+        item.put("brojregtablica", object.getBrojregtablica());
         item.put("tip", object.getTip());
         return item;
     }
     @Override
     public List<Vozilo> searchByText(String text) throws Exception{
-        return executeQuery("SELECT * FROM vozilo WHERE naziv LIKE concat('%', ?, '%')", new Object[]{text});
+        return executeQuery("SELECT * FROM dbvozilo WHERE naziv LIKE ?", new Object[]{"%" + text + "%"});
     }
 }

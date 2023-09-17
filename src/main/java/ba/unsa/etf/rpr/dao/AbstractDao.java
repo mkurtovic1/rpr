@@ -18,9 +18,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     private static void createConnection() {
         if(AbstractDao.connection==null){
             try {
+
                 AbstractDao.connection= DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_IDCardGeneratorDB?sessionVariables=WAIT_TIMEOUT=28800", "freedb_mkurtovic1","B#B$2QPH$!KDWqb");
             } catch (SQLException e) {
                 e.printStackTrace();
+                throw new RuntimeException("Failed to connect to the database.");
             }finally {
                 Runtime.getRuntime().addShutdownHook(new Thread(){
                     @Override
@@ -36,7 +38,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
     public static Connection getConnection(){
-        return AbstractDao.connection;
+        return connection;
     }
 
     public abstract T row2object(ResultSet resultSet) throws Exception;
@@ -47,7 +49,13 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     public List<T> getAll() throws Exception {
-        return executeQuery("SELECT*FROM "+tableName, null);
+        try{
+            String query="SELECT * FROM "+ tableName;
+            return executeQuery(query, null);
+        }catch (Exception e){
+            throw new Exception("Failed to retrieve all items from the database.", e);
+        }
+
     }
     public void delete(int id) throws Exception {
         String sql = "DELETE FROM "+tableName+" WHERE id=?";

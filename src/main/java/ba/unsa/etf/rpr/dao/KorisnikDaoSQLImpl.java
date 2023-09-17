@@ -10,7 +10,7 @@ import java.util.TreeMap;
 public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements KorisnikDao {
     private static KorisnikDaoSQLImpl instance=null;
     private KorisnikDaoSQLImpl(){
-        super("korisnici");
+        super("user");
     }
     public static KorisnikDaoSQLImpl getInstance(){
         if(instance==null){
@@ -27,7 +27,7 @@ public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements Korisni
         try {
             Korisnik korisnik=new Korisnik();
             korisnik.setId(resultSet.getInt("id"));
-            korisnik.setIme(resultSet.getString("ime"));
+            korisnik.setIme(resultSet.getString("first_name"));
             return korisnik;
         } catch (SQLException e){
             throw new Exception(e.getMessage(), e);
@@ -38,7 +38,7 @@ public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements Korisni
     public Map<String, Object> object2row(Korisnik object) {
         Map<String, Object> row=new TreeMap<>();
         row.put("id", object.getId());
-        row.put("ime", object.getIme());
+        row.put("first_name", object.getIme());
         return row;
     }
 }

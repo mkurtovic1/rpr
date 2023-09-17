@@ -1,86 +1,108 @@
 package ba.unsa.etf.rpr.controllers;
 
 
+
 import ba.unsa.etf.rpr.business.VoziloManager;
 import ba.unsa.etf.rpr.domain.Vozilo;
-import javafx.beans.property.SimpleStringProperty;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 
 public class AddUpdateVoziloController {
+    private Vozilo modifiedVozilo;
+    private VoziloManager voziloManager;
+
     @FXML
-    public GridPane gridPane;
-    private final VoziloManager voziloManager=new VoziloManager();
-    //private  final IznajmljivanjeManager iznajmljivanjeManager=new IznajmljivanjeManager();
-    private VoziloModel model=new VoziloModel();
-    private Integer voziloId; //id koji se edit/add
+    private TextField naziv;
+    ObservableList<String> goriva= FXCollections.observableArrayList("dizel", "benzin", "plin");
+    @FXML
+    private ComboBox<String> gorivo;
+    ObservableList<String> mjenjaci=FXCollections.observableArrayList("automatic", "manuel");
+    @FXML
+    private ComboBox<String> mjenjac;
+    ObservableList<String> putnici=FXCollections.observableArrayList("1", "2", "3", "4", "5");
+    @FXML
+    private ComboBox<String> maxbrputnika;
+    @FXML
+    private TextField cijenapodanu;
+    @FXML
+    private TextField brojregtablica;
+    @FXML
+    private ComboBox<String> tip;
+    @FXML
+    private Button btnsave;
+    @FXML
+    private Button btncancel;
 
-    public TextField  columnVoziloNaziv;
-    public ComboBox columnVoziloGorivo;
-    public ComboBox columnVoziloMjenjac;
-    public ComboBox  columnVoziloMaxBrPutnika;
-    public TextField  columnVoziloCijenaPoDanu;
-    public TextField  columnVoziloBrojRegTablica;
-    public ComboBox columnVoziloTip;
 
+    public AddUpdateVoziloController(){
 
-
-    public AddUpdateVoziloController(Integer voziloId){
-        this.voziloId=voziloId;
     }
+    @FXML
     public void initialize(){
-        try {
-            columnVoziloNaziv.textProperty().bindBidirectional(model.vozilo);
-            columnVoziloGorivo.valueProperty().bindBidirectional(model.vozilo);
-            columnVoziloMjenjac.valueProperty().bindBidirectional(model.vozilo);
-            columnVoziloMaxBrPutnika.valueProperty().bindBidirectional(model.vozilo);
-            columnVoziloCijenaPoDanu.textProperty().bindBidirectional(model.vozilo);
-            columnVoziloBrojRegTablica.textProperty().bindBidirectional(model.vozilo);
-            columnVoziloTip.valueProperty().bindBidirectional(model.vozilo);
+        gorivo.setItems(goriva);
+        mjenjac.setItems(mjenjaci);
+        maxbrputnika.setItems(putnici);
+        System.out.println("Add and update vozilo initialized.");
+        naziv.clear();
 
-        }catch (Exception e){
-            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+
+    }
+    public void setVozilo(Vozilo vozilo){
+        if(vozilo!=null){
+            this.modifiedVozilo=vozilo;
+            naziv.setText(vozilo.getNaziv());
+            gorivo.setValue(vozilo.getGorivo());
+            mjenjac.setValue(vozilo.getMjenjac());
+            maxbrputnika.setValue(String.valueOf(vozilo.getMaxbrputnika()));
+            cijenapodanu.setText(String.valueOf(vozilo.getCijenapodanu()));
+            brojregtablica.setText(vozilo.getBrojregtablica());
+            tip.setValue(vozilo.getTip());
         }
     }
-    public void cancelForm(ActionEvent event){
-        gridPane.getScene().getWindow().hide();
+    public Vozilo getModifiedVozilo(){
+        if(modifiedVozilo!=null){
+            modifiedVozilo.setNaziv(naziv.getText());
+            modifiedVozilo.setGorivo(gorivo.getValue());
+            modifiedVozilo.setMjenjac(gorivo.getValue());
+            modifiedVozilo.setMaxbrputnika(Integer.parseInt(maxbrputnika.getValue()));
+            modifiedVozilo.setCijenapodanu(Integer.parseInt(cijenapodanu.getText()));
+            modifiedVozilo.setBrojregtablica(brojregtablica.getText());
+            modifiedVozilo.setTip(tip.getValue());
+            return modifiedVozilo;
+        }
+        return null;
     }
-    public void saveForm(ActionEvent event){
-        try{
-            Vozilo vozilo=model.toVozilo();
-            if(voziloId!=null){
-                vozilo.setId(voziloId);
-                voziloManager.update(vozilo);
+    @FXML
+    private void saveForm(ActionEvent event){
+        Vozilo modifiedVozilo=getModifiedVozilo();
+        if(modifiedVozilo!=null){
+            try {
+                voziloManager.add(modifiedVozilo);
+                showAlert(Alert.AlertType.INFORMATION, "Succes", "Vozilo added successfully");
+            }catch (Exception e){
+                showAlert(Alert.AlertType.ERROR, "Error", "Faild to add Vozilo"+e.getMessage());
             }
-            else{
-                voziloManager.add(vozilo);
-            }
-            gridPane.getScene().getWindow().hide();
-        }catch (Exception e){
-            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
         }
     }
-
-    /**
-     * Helper Model class that supports 2 way data binding with form for Quote management
-     *
-     */
-    public class VoziloModel{
-        public SimpleStringProperty vozilo=new SimpleStringProperty("");
-
-        public Vozilo toVozilo(){
-            Vozilo vozilo=new Vozilo();
-            vozilo.setNaziv(this.vozilo.getValue());
-            vozilo.setMaxbrputnika(Integer.parseInt(this.vozilo.getValue()));
-            vozilo.setCijenapodanu(Integer.parseInt(this.vozilo.getValue()));
-            vozilo.setBrojregtablica(this.vozilo.getValue());
-            return vozilo;
-        }
-
-
+    @FXML
+    private void cancelForm(ActionEvent event){
+        System.out.println("Cancel button clicked.");
+        Stage stage=(Stage) btncancel.getScene().getWindow();
+        stage.close();
     }
+    private void showAlert(Alert.AlertType alertType,String title, String contentText){
+        Alert alert=new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(contentText);
+        alert.showAndWait();
+    }
+
 
 }

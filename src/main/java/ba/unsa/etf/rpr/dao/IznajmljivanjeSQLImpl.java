@@ -10,7 +10,7 @@ import java.util.Map;
 public class   IznajmljivanjeSQLImpl extends AbstractDao<Iznajmljivanje> implements IznajmljivanjeDao {
     private static IznajmljivanjeSQLImpl instance=null;
     public IznajmljivanjeSQLImpl() {
-        super("iznajmljivanje");
+        super("dbiznajmljivanje");
     }
     public static IznajmljivanjeSQLImpl getInstance(){
         if(instance==null) instance=new IznajmljivanjeSQLImpl();

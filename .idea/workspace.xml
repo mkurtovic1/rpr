@@ -5,18 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="Vozilo:dao, sql, fxml">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/GlavnaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/glavna.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/AddUpdateVoziloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/AddUpdateVoziloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/VoziloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/VoziloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/GlavnaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/GlavnaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/AbstractDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/AbstractDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/addupdatevozilo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/vozilo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/IznajmljivanjeSQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/IznajmljivanjeSQLImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/KorisnikDaoSQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/KorisnikDaoSQLImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/VoziloDaoSQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/VoziloDaoSQLImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/glavna.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/glavna.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/vozilo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/vozilo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/business/IznajmljivanjeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/business/IznajmljivanjeManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/business/KorisnikManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/business/KorisnikManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/business/VoziloManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/business/VoziloManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/AddUpdateVoziloController$VoziloModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/AddUpdateVoziloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/AddUpdateVoziloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/GlavnaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/GlavnaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/VoziloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/VoziloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/AbstractDao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/AbstractDao$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/AbstractDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/AbstractDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/Dao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/Dao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/DaoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/DaoFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/IznajmljivanjeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/IznajmljivanjeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/IznajmljivanjeSQLImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/IznajmljivanjeSQLImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/KorisnikDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/KorisnikDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/KorisnikDaoSQLImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/KorisnikDaoSQLImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/VoziloDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/VoziloDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/VoziloDaoSQLImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/dao/VoziloDaoSQLImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Idable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Idable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Iznajmljivanje.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Iznajmljivanje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/IznajmljivanjeLista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/IznajmljivanjeLista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Korisnik.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Korisnik.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Vozilo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Vozilo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/glavna.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/glavna.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/vozilo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/vozilo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,13 +52,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -54,29 +79,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/asus/OneDrive - Faculty of Electrical Engineering Sarajevo/Desktop/rpr-2parc-t3-rjesenje",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.39310345",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/asus/OneDrive - Faculty of Electrical Engineering Sarajevo/Desktop/rpr-2parc-t3-rjesenje&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.39310345&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ba.unsa.etf.rpr" />
@@ -89,7 +114,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.App" />
       <module name="projekat" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files (x86)\Java\javafx-sdk-20.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
@@ -103,11 +128,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.App" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -127,7 +147,13 @@
       <workItem from="1694381960123" duration="2715000" />
       <workItem from="1694387276296" duration="11444000" />
       <workItem from="1694445102289" duration="2461000" />
-      <workItem from="1694455061038" duration="2322000" />
+      <workItem from="1694455061038" duration="3097000" />
+      <workItem from="1694543071529" duration="1353000" />
+      <workItem from="1694686506091" duration="4094000" />
+      <workItem from="1694691660581" duration="2951000" />
+      <workItem from="1694701709873" duration="2985000" />
+      <workItem from="1694803355132" duration="13771000" />
+      <workItem from="1694977664897" duration="2197000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -173,17 +199,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/AbstractDao.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/AbstractDao.java</url>
-          <line>17</line>
-          <properties class="ba.unsa.etf.rpr.dao.AbstractDao" method="createConnection">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
+          <line>57</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
