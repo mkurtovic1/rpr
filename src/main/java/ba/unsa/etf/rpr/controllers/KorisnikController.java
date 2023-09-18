@@ -15,9 +15,13 @@ public class KorisnikController {
     public TextField pass;
     @FXML
     public TextField email;
+    @FXML
     public Button btncancel;
 
+    @FXML
     public void cancelAction(ActionEvent event) {
+        Stage stage = (Stage) btncancel.getScene().getWindow();
+        stage.close();
     }
 
     public void loginAction(ActionEvent event) {
@@ -39,7 +43,8 @@ public class KorisnikController {
     }
 
     private void closeLoginWindow() {
-        Stage stage = (Stage) email.getScene().getWindow();
+
+        Stage stage = (Stage) btncancel.getScene().getWindow();
         stage.close();
     }
 
