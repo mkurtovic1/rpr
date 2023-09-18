@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="iznajmiForm works for adding new iznajmi but doesn't get idvozilo from selectedvozilo">
+    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="now everything works perfectly in iznajmiForm">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties.sample" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +123,7 @@
       <workItem from="1694977664897" duration="14838000" />
       <workItem from="1695030313955" duration="7597000" />
       <workItem from="1695046660179" duration="13643000" />
-      <workItem from="1695073492699" duration="6209000" />
+      <workItem from="1695073492699" duration="6638000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -267,7 +269,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695080151981</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="iznajmiForm works for adding new iznajmi but doesn't get idvozilo from selectedvozilo">
+      <option name="closed" value="true" />
+      <created>1695080181149</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1695080181149</updated>
+    </task>
+    <task id="LOCAL-00020" summary="now everything works perfectly in iznajmiForm">
+      <option name="closed" value="true" />
+      <created>1695080355025</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1695080355025</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,6 +323,7 @@
     <MESSAGE value="changed row2object and object2row" />
     <MESSAGE value="changed iznajmiForm" />
     <MESSAGE value="iznajmiForm works for adding new iznajmi but doesn't get idvozilo from selectedvozilo" />
-    <option name="LAST_COMMIT_MESSAGE" value="iznajmiForm works for adding new iznajmi but doesn't get idvozilo from selectedvozilo" />
+    <MESSAGE value="now everything works perfectly in iznajmiForm" />
+    <option name="LAST_COMMIT_MESSAGE" value="now everything works perfectly in iznajmiForm" />
   </component>
 </project>
