@@ -17,10 +17,8 @@ import java.time.temporal.ChronoUnit;
 
 public class IznajmiController {
     private IznajmljivanjeManager iznajmljivanjeManager=new IznajmljivanjeManager();
-
     private Vozilo selectedVozilo;
     public TextField idvozila;
-    
     public TextField ukupno;
     public Button btncancel;
     public Button btniznajmi;
