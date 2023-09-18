@@ -1,8 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-import ba.unsa.etf.rpr.domain.Iznajmljivanje;
-import ba.unsa.etf.rpr.domain.Korisnik;
-import ba.unsa.etf.rpr.domain.Vozilo;
+import ba.unsa.etf.rpr.domain.*;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

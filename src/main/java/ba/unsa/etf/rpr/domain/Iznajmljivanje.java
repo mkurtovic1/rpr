@@ -7,8 +7,7 @@ import java.util.Objects;
 
 public class Iznajmljivanje implements Idable{
     private int id;
-    private Korisnik korisnik;
-    private Vozilo vozilo;
+    private int idvozilo;
     private int cijena;
     private LocalDate preuzimanje;
     private LocalDate vracanje;
@@ -16,10 +15,9 @@ public class Iznajmljivanje implements Idable{
     public Iznajmljivanje() {
     }
 
-    public Iznajmljivanje(int id, Korisnik korisnik, Vozilo vozilo, int cijena, LocalDate preuzimanje, LocalDate vracanje) {
-        this.id=id;
-        this.korisnik=korisnik;
-        this.vozilo=vozilo;
+    public Iznajmljivanje(int id, int idvozilo, int cijena, LocalDate preuzimanje, LocalDate vracanje) {
+        this.id = id;
+        this.idvozilo = idvozilo;
         this.cijena = cijena;
         this.preuzimanje = preuzimanje;
         this.vracanje = vracanje;
@@ -33,20 +31,12 @@ public class Iznajmljivanje implements Idable{
         this.id = id;
     }
 
-    public Korisnik getKorisnik() {
-        return korisnik;
+    public int getIdvozilo() {
+        return idvozilo;
     }
 
-    public void setKorisnik(Korisnik korisnik) {
-        this.korisnik = korisnik;
-    }
-
-    public Vozilo getVozilo() {
-        return vozilo;
-    }
-
-    public void setVozilo(Vozilo vozilo) {
-        this.vozilo = vozilo;
+    public void setIdvozilo(int idvozilo) {
+        this.idvozilo = idvozilo;
     }
 
     public int getCijena() {
@@ -78,24 +68,22 @@ public class Iznajmljivanje implements Idable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Iznajmljivanje that = (Iznajmljivanje) o;
-        return id == that.id && cijena == that.cijena && Objects.equals(korisnik, that.korisnik) && Objects.equals(vozilo, that.vozilo) && Objects.equals(preuzimanje, that.preuzimanje) && Objects.equals(vracanje, that.vracanje);
+        return id == that.id && idvozilo == that.idvozilo && cijena == that.cijena && Objects.equals(preuzimanje, that.preuzimanje) && Objects.equals(vracanje, that.vracanje);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, korisnik, vozilo, cijena, preuzimanje, vracanje);
+        return Objects.hash(id, idvozilo, cijena, preuzimanje, vracanje);
     }
 
     @Override
     public String toString() {
         return "Iznajmljivanje{" +
                 "id=" + id +
-                ", korisnik=" + korisnik +
-                ", vozilo=" + vozilo +
+                ", idvozilo=" + idvozilo +
                 ", cijena=" + cijena +
                 ", preuzimanje=" + preuzimanje +
                 ", vracanje=" + vracanje +
                 '}';
-        //
     }
 }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="changed korisnikid and voziloid in Korisnik and Vozilo">
+    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="changed row2object and object2row">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/IznajmljivanjeDaoSQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/IznajmljivanjeDaoSQLImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
@@ -122,7 +122,8 @@
       <workItem from="1694803355132" duration="13771000" />
       <workItem from="1694977664897" duration="14838000" />
       <workItem from="1695030313955" duration="7597000" />
-      <workItem from="1695046660179" duration="13372000" />
+      <workItem from="1695046660179" duration="13643000" />
+      <workItem from="1695073492699" duration="714000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -196,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695072231566</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changed row2object and object2row">
+      <option name="closed" value="true" />
+      <created>1695073306207</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695073306207</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +240,7 @@
     <MESSAGE value="created loginforma.fxml and KorisnikController.java with loginAction method" />
     <MESSAGE value="created cancelAction" />
     <MESSAGE value="changed korisnikid and voziloid in Korisnik and Vozilo" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed korisnikid and voziloid in Korisnik and Vozilo" />
+    <MESSAGE value="changed row2object and object2row" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed row2object and object2row" />
   </component>
 </project>
