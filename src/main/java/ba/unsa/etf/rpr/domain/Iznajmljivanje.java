@@ -96,5 +96,6 @@ public class Iznajmljivanje implements Idable{
                 ", preuzimanje=" + preuzimanje +
                 ", vracanje=" + vracanje +
                 '}';
+        //
     }
 }
