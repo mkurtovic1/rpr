@@ -29,11 +29,10 @@ public class IznajmiController {
     public Button izracunajCijenu;
     private IznajmljivanjeDaoSQLImpl dao;
 
-    public double ukupnacijena=0;
+    public double ukupnacijena=0; //pomocna
 
     public IznajmiController() throws Exception{
         dao= IznajmljivanjeDaoSQLImpl.getInstance();
-
     }
     void setSelectedVozilo(Vozilo vozilo){
         this.selectedVozilo=vozilo;
@@ -47,7 +46,6 @@ public class IznajmiController {
         }
     }
     public void iznajmiForm(ActionEvent event) throws Exception {
-
         try {
         Iznajmljivanje iznajmljivanje=new Iznajmljivanje();
         iznajmljivanje.setPreuzimanje(preuzimanje.getValue());
