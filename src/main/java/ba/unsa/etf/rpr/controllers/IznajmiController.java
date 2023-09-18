@@ -53,9 +53,7 @@ public class IznajmiController {
         iznajmljivanje.setPreuzimanje(preuzimanje.getValue());
         iznajmljivanje.setVracanje(vracanje.getValue());
         iznajmljivanje.setIdvozila(selectedVozilo.getId());
-
         iznajmljivanje.setCijena((int) ukupnacijena);
-
         Iznajmljivanje addedIznajmljivanje=iznajmljivanjeManager.add(iznajmljivanje);
         System.out.println("Iznajmljivanje added "+addedIznajmljivanje);
         }catch (Exception e){
@@ -67,8 +65,6 @@ public class IznajmiController {
         stage.close();
         
     }
-
-
     public void izracacunajCijenu(ActionEvent event) {
         LocalDate preuzimanjeDate=preuzimanje.getValue();
         LocalDate vracanjeDate=vracanje.getValue();
