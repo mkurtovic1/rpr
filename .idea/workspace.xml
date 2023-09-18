@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="created connection with .properties">
+    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="created connection with .properties.sample">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +122,7 @@
       <workItem from="1694977664897" duration="14838000" />
       <workItem from="1695030313955" duration="7597000" />
       <workItem from="1695046660179" duration="13643000" />
-      <workItem from="1695073492699" duration="6955000" />
+      <workItem from="1695073492699" duration="7568000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -299,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695080881179</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="created connection with .properties.sample">
+      <option name="closed" value="true" />
+      <created>1695081195667</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1695081195667</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +349,7 @@
     <MESSAGE value="now everything works perfectly in iznajmiForm" />
     <MESSAGE value="created .properties" />
     <MESSAGE value="created connection with .properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="created connection with .properties" />
+    <MESSAGE value="created connection with .properties.sample" />
+    <option name="LAST_COMMIT_MESSAGE" value="created connection with .properties.sample" />
   </component>
 </project>
