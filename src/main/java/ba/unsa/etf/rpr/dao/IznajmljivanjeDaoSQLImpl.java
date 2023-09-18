@@ -27,8 +27,7 @@ public class IznajmljivanjeDaoSQLImpl extends AbstractDao<Iznajmljivanje> implem
     public Map<String, Object> object2row(Iznajmljivanje object) {
         Map<String, Object> row=new TreeMap<>();
         row.put("id", object.getId());
-        row.put("idkorisnik", object.getKorisnik());
-        row.put("idvozilo", object.getVozilo());
+        row.put("idvozilo", object.getId());
         row.put("cijena", object.getCijena());
         row.put("preuzimanje", object.getPreuzimanje());
         row.put("vracanje", object.getVracanje());
@@ -41,12 +40,7 @@ public class IznajmljivanjeDaoSQLImpl extends AbstractDao<Iznajmljivanje> implem
             Iznajmljivanje iznajmljivanje=new Iznajmljivanje();
 
             iznajmljivanje.setId(resultSet.getInt("id"));
-            int korisnikId=resultSet.getInt("idkorisnik");
-            int volziloId=resultSet.getInt("idvozilo");
-            Korisnik korisnik= getById(korisnikId).getKorisnik();
-            Vozilo vozilo= getById(volziloId).getVozilo();
-            iznajmljivanje.setKorisnik(korisnik);
-            iznajmljivanje.setVozilo(vozilo);
+            iznajmljivanje.setId(resultSet.getInt("idvozilo"));
             iznajmljivanje.setCijena(resultSet.getInt("cijena"));
             iznajmljivanje.setPreuzimanje(LocalDate.parse(resultSet.getString("preuzimanje")));
             iznajmljivanje.setVracanje(LocalDate.parse(resultSet.getString("vracanje")));

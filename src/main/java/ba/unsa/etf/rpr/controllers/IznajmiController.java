@@ -19,8 +19,6 @@ public class IznajmiController {
     private IznajmljivanjeManager iznajmljivanjeManager=new IznajmljivanjeManager();
 
     private Vozilo selectedVozilo;
-
-    public TextField idkorisnika;
     public TextField idvozila;
     
     public TextField ukupno;
@@ -58,11 +56,9 @@ public class IznajmiController {
 
         try {
         Iznajmljivanje iznajmljivanje=new Iznajmljivanje();
-
-
         iznajmljivanje.setPreuzimanje(preuzimanje.getValue());
         iznajmljivanje.setVracanje(vracanje.getValue());
-        iznajmljivanje.setVoziloId(selectedVozilo.getId());
+        iznajmljivanje.setIdvozilo(selectedVozilo.getId());
 
         Iznajmljivanje addedIznajmljivanje=iznajmljivanjeManager.add(iznajmljivanje);
 
