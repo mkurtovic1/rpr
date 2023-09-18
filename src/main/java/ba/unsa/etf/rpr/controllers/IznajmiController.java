@@ -61,10 +61,7 @@ public class IznajmiController {
         iznajmljivanje.setIdvozilo(selectedVozilo.getId());
 
         Iznajmljivanje addedIznajmljivanje=iznajmljivanjeManager.add(iznajmljivanje);
-
-
-
-       System.out.println("Iznajmljivanje added "+addedIznajmljivanje);
+        System.out.println("Iznajmljivanje added "+addedIznajmljivanje);
         }catch (Exception e){
             e.printStackTrace();
         }
