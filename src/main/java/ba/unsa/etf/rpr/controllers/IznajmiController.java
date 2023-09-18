@@ -66,7 +66,6 @@ public class IznajmiController {
             e.printStackTrace();
         }
     }
-
     public void cancelForm(ActionEvent event) {
         Stage stage=(Stage) btncancel.getScene().getWindow();
         stage.close();
