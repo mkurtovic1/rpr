@@ -35,10 +35,6 @@ public class IznajmiController {
         dao= IznajmljivanjeDaoSQLImpl.getInstance();
 
     }
-
-
-
-
     void setSelectedVozilo(Vozilo vozilo){
         this.selectedVozilo=vozilo;
         idvozila.setText(String.valueOf(vozilo.getId()));
@@ -48,9 +44,7 @@ public class IznajmiController {
     public void initialize(){
         if(selectedVozilo!=null){
             idvozila.setText(String.valueOf(selectedVozilo.getId()));
-
         }
-
     }
     public void iznajmiForm(ActionEvent event) throws Exception {
 
