@@ -46,6 +46,7 @@ public class IznajmiController {
     public void iznajmiForm(ActionEvent event) throws Exception {
         try {
         Iznajmljivanje iznajmljivanje=new Iznajmljivanje();
+        iznajmljivanje.setId(selectedVozilo.getId());
         iznajmljivanje.setPreuzimanje(preuzimanje.getValue());
         iznajmljivanje.setVracanje(vracanje.getValue());
         iznajmljivanje.setIdvozila(selectedVozilo.getId());
