@@ -18,6 +18,7 @@ public class KorisnikController {
     @FXML
     public Button btncancel;
 
+    private int loggedInUserId=-1;
     @FXML
     public void cancelAction(ActionEvent event) {
         Stage stage = (Stage) btncancel.getScene().getWindow();
@@ -27,12 +28,20 @@ public class KorisnikController {
     public void loginAction(ActionEvent event) {
         String mail=email.getText();
         String password=pass.getText();
-        boolean isLoginValid=validateLogin(mail, password);
-        if(isLoginValid){
+        Integer userId=validateLogin(mail, password);
+
+        if(userId!=null){
+            setLoggedInUserId(userId);
             closeLoginWindow();
         }else {
             showAlert(Alert.AlertType.ERROR, "Invalid login", "Invalid email or password");
         }
+    }
+    public int getLoggedInUserId(){
+        return loggedInUserId;
+    }
+    private void setLoggedInUserId(int userId){
+        this.loggedInUserId=userId;
     }
 
     private void showAlert(Alert.AlertType alertType, String title, String contentText) {
@@ -47,8 +56,15 @@ public class KorisnikController {
         Stage stage = (Stage) btncancel.getScene().getWindow();
         stage.close();
     }
+    public Integer getId(){
+        String emailText=email.getText();
+        String passText=pass.getText();
+        return validateLogin(emailText, passText);
+    }
 
-    private boolean validateLogin(String mail, String password) {
+
+
+    public Integer validateLogin(String mail, String password) {
         try {
             KorisnikDaoSQLImpl dao=KorisnikDaoSQLImpl.getInstance();
             Korisnik korisnik=dao.getByEmail(mail);
@@ -57,14 +73,15 @@ public class KorisnikController {
                 System.out.println("Stored password: "+storedPassword);
                 boolean isPasswordValid= password.equals(storedPassword);
                 System.out.println("Is password valid? "+isPasswordValid);
-                return isPasswordValid;
+                System.out.println("Id of user "+korisnik.getId());
+                return isPasswordValid? korisnik.getId() : null;
             }else {
                 System.out.println("User with email "+mail+" not found.");
-                return false;
+                return null;
             }
         }catch (Exception e){
             e.printStackTrace();
-            return false;
+            return null;
         }
     }
 }

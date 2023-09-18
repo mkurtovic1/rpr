@@ -58,6 +58,7 @@ public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements Korisni
             if(resultSet.next()){
                 Korisnik korisnik=row2object(resultSet);
                 korisnik.setLozinka(resultSet.getString("lozinka"));
+                korisnik.setId(resultSet.getInt("id"));
                 return korisnik;
             }
             return null; //nema usera s poslanom emailom
@@ -65,4 +66,5 @@ public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements Korisni
             throw new Exception("Error while fetching user by email: "+ e.getMessage(), e);
         }
     }
+
 }

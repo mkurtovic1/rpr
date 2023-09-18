@@ -4,12 +4,11 @@ package ba.unsa.etf.rpr.domain;
 
 import java.time.LocalDate;
 import java.util.Objects;
-//samo da ga git pokupi
 
 public class Iznajmljivanje implements Idable{
     private int id;
-    private int klijentId;
-    private int voziloId;
+    private Korisnik korisnik;
+    private Vozilo vozilo;
     private int cijena;
     private LocalDate preuzimanje;
     private LocalDate vracanje;
@@ -17,9 +16,10 @@ public class Iznajmljivanje implements Idable{
     public Iznajmljivanje() {
     }
 
-    public Iznajmljivanje(int klijentId, int voziloId, int cijena, LocalDate preuzimanje, LocalDate vracanje) {
-        this.klijentId = klijentId;
-        this.voziloId = voziloId;
+    public Iznajmljivanje(int id, Korisnik korisnik, Vozilo vozilo, int cijena, LocalDate preuzimanje, LocalDate vracanje) {
+        this.id=id;
+        this.korisnik=korisnik;
+        this.vozilo=vozilo;
         this.cijena = cijena;
         this.preuzimanje = preuzimanje;
         this.vracanje = vracanje;
@@ -33,20 +33,20 @@ public class Iznajmljivanje implements Idable{
         this.id = id;
     }
 
-    public int getKlijentId() {
-        return klijentId;
+    public Korisnik getKorisnik() {
+        return korisnik;
     }
 
-    public void setKlijentId(int klijentId) {
-        this.klijentId = klijentId;
+    public void setKorisnik(Korisnik korisnik) {
+        this.korisnik = korisnik;
     }
 
-    public int getVoziloId() {
-        return voziloId;
+    public Vozilo getVozilo() {
+        return vozilo;
     }
 
-    public void setVoziloId(int voziloId) {
-        this.voziloId = voziloId;
+    public void setVozilo(Vozilo vozilo) {
+        this.vozilo = vozilo;
     }
 
     public int getCijena() {
@@ -78,20 +78,20 @@ public class Iznajmljivanje implements Idable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Iznajmljivanje that = (Iznajmljivanje) o;
-        return getId() == that.getId() && getKlijentId() == that.getKlijentId() && getVoziloId() == that.getVoziloId() && getCijena() == that.getCijena() && Objects.equals(getPreuzimanje(), that.getPreuzimanje()) && Objects.equals(getVracanje(), that.getVracanje());
+        return id == that.id && cijena == that.cijena && Objects.equals(korisnik, that.korisnik) && Objects.equals(vozilo, that.vozilo) && Objects.equals(preuzimanje, that.preuzimanje) && Objects.equals(vracanje, that.vracanje);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getKlijentId(), getVoziloId(), getCijena(), getPreuzimanje(), getVracanje());
+        return Objects.hash(id, korisnik, vozilo, cijena, preuzimanje, vracanje);
     }
 
     @Override
     public String toString() {
         return "Iznajmljivanje{" +
                 "id=" + id +
-                ", klijentId=" + klijentId +
-                ", voziloId=" + voziloId +
+                ", korisnik=" + korisnik +
+                ", vozilo=" + vozilo +
                 ", cijena=" + cijena +
                 ", preuzimanje=" + preuzimanje +
                 ", vracanje=" + vracanje +

@@ -3,7 +3,6 @@ package ba.unsa.etf.rpr.controllers;
 import ba.unsa.etf.rpr.business.KorisnikManager;
 import ba.unsa.etf.rpr.business.VoziloManager;
 import ba.unsa.etf.rpr.dao.VoziloDaoSQLImpl;
-import ba.unsa.etf.rpr.domain.Korisnik;
 import ba.unsa.etf.rpr.domain.Vozilo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,7 +14,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 
 import java.io.IOException;
 import java.util.Optional;
@@ -29,7 +27,7 @@ public class GlavnaController {
     public Button btnIznajmi;
     public Button btnlogin;
     private VoziloManager voziloManager=new VoziloManager();
-    private KorisnikManager korisnikManager=new KorisnikManager();
+
     private Vozilo selectedVozilo;
     public void setVoziloManager(VoziloManager voziloManager){
         this.voziloManager=voziloManager;
@@ -40,7 +38,6 @@ public class GlavnaController {
     }
 
     public TableView<Vozilo> tabelaVozila;
-    public TextField search;
     public TableColumn<Vozilo, Integer> id;
     public TableColumn<Vozilo, String> naziv;
     public TableColumn<Vozilo, String> gorivo;
@@ -52,6 +49,10 @@ public class GlavnaController {
     private VoziloDaoSQLImpl dao;
     private ObservableList<Vozilo> listVozilo;
 
+    private int loggedInUserId=1;
+    public void setLoggedInUserId(int userId){
+        this.loggedInUserId=userId;
+    }
     public GlavnaController() throws Exception {
         dao=VoziloDaoSQLImpl.getInstance();
         listVozilo=FXCollections.observableArrayList(dao.getAll());
@@ -72,14 +73,7 @@ public class GlavnaController {
         refreshVozila();
 
     }
-    public void searchVozila(ActionEvent event){
-        try {
-            tabelaVozila.setItems(FXCollections.observableList(voziloManager.searchVozilo(search.getText())));
-            tabelaVozila.refresh();
-        }catch (Exception e){
-            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
-        }
-    }
+
     public void refreshVozila (){
         try{
             tabelaVozila.setItems(FXCollections.observableList(voziloManager.getAll()));
@@ -90,19 +84,7 @@ public class GlavnaController {
 
     }
 
-    //ne treba metoda, jer necu brisat preko id nego cijelu kolonu
-    /*public void obrisiVozilo(Integer id){
-        try {
-            Alert confirmation=new Alert(Alert.AlertType.CONFIRMATION, "Sigurno obrisati");
-            Optional<ButtonType> result=confirmation.showAndWait();
-            if(!result.get().getButtonData().isCancelButton()){
-                voziloManager.delete(id);
-                refreshVozila();
-            }
-        } catch (Exception e) {
-            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
-        }
-    }*/
+
 
     public void izmijeniVozilo(ActionEvent actionEvent){
         Vozilo vozilo=tabelaVozila.getSelectionModel().getSelectedItem();
@@ -206,8 +188,10 @@ public class GlavnaController {
 
             Parent root=loader.load();
             IznajmiController iznajmiController=loader.getController();
+
             if(iznajmiController!=null){
                 iznajmiController.setSelectedVozilo(vozilo);
+
                 Stage stage=new Stage();
                 stage.setTitle("Iznajmi vozilo");
                 stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
@@ -244,12 +228,26 @@ public class GlavnaController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/loginforma.fxml"));
             //get the controller associated with fxml
-
             Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Login form");
-            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.showAndWait();
+            KorisnikController korisnikController=loader.getController();
+            if(korisnikController!=null){
+
+                Stage stage = new Stage();
+
+
+                stage.setTitle("Login form");
+                stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                stage.showAndWait();
+
+                int userId=korisnikController.getLoggedInUserId();
+                if(userId!=-1){
+                    setLoggedInUserId(userId);
+                }else {
+                    System.err.println("Korisnik Controller is null");
+                }
+
+            }
+
 
 
         }catch (IOException e) {

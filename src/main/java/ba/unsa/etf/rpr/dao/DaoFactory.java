@@ -3,7 +3,7 @@ package ba.unsa.etf.rpr.dao;
 public class DaoFactory {
     private static  final KorisnikDao korisnikDao=KorisnikDaoSQLImpl.getInstance();
     private static  final VoziloDao voziloDao=VoziloDaoSQLImpl.getInstance();
-    private static final IznajmljivanjeDao iznajmljivanjeDao=IznajmljivanjeSQLImpl.getInstance();
+    private static final IznajmljivanjeDao iznajmljivanjeDao= IznajmljivanjeDaoSQLImpl.getInstance();
     private DaoFactory(){}
 
     public static KorisnikDao korisnikDao(){

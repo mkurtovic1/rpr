@@ -1,11 +1,8 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.IznajmljivanjeManager;
-import ba.unsa.etf.rpr.business.KorisnikManager;
-import ba.unsa.etf.rpr.business.VoziloManager;
-import ba.unsa.etf.rpr.dao.IznajmljivanjeSQLImpl;
+import ba.unsa.etf.rpr.dao.IznajmljivanjeDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Iznajmljivanje;
-import ba.unsa.etf.rpr.domain.Korisnik;
 import ba.unsa.etf.rpr.domain.Vozilo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,11 +17,9 @@ import java.time.temporal.ChronoUnit;
 
 public class IznajmiController {
     private IznajmljivanjeManager iznajmljivanjeManager=new IznajmljivanjeManager();
-    private VoziloManager voziloManager;
-    private KorisnikManager korisnikManager;
+
     private Vozilo selectedVozilo;
-    @FXML
-    public TextField idIznajmljivanja;
+
     public TextField idkorisnika;
     public TextField idvozila;
     
@@ -34,17 +29,15 @@ public class IznajmiController {
     public DatePicker preuzimanje;
     public DatePicker vracanje;
     public Button izracunajCijenu;
-    private IznajmljivanjeSQLImpl dao;
+    private IznajmljivanjeDaoSQLImpl dao;
+
+
 
     public IznajmiController() throws Exception{
-        dao=IznajmljivanjeSQLImpl.getInstance();
+        dao= IznajmljivanjeDaoSQLImpl.getInstance();
+
     }
-    public void setKorisnikManager(KorisnikManager korisnikManager){
-        this.korisnikManager=korisnikManager;
-    }
-    public void setVoziloManager(VoziloManager voziloManager){
-        this.voziloManager=voziloManager;
-    }
+
 
 
 
@@ -57,6 +50,7 @@ public class IznajmiController {
     public void initialize(){
         if(selectedVozilo!=null){
             idvozila.setText(String.valueOf(selectedVozilo.getId()));
+
         }
 
     }
@@ -65,12 +59,14 @@ public class IznajmiController {
         try {
         Iznajmljivanje iznajmljivanje=new Iznajmljivanje();
 
-        iznajmljivanje.setKlijentId(1);
+
         iznajmljivanje.setPreuzimanje(preuzimanje.getValue());
         iznajmljivanje.setVracanje(vracanje.getValue());
         iznajmljivanje.setVoziloId(selectedVozilo.getId());
+
         Iznajmljivanje addedIznajmljivanje=iznajmljivanjeManager.add(iznajmljivanje);
-        idIznajmljivanja.setText(String.valueOf(addedIznajmljivanje.getId()));
+
+
 
        System.out.println("Iznajmljivanje added "+addedIznajmljivanje);
         }catch (Exception e){
