@@ -1,9 +1,10 @@
 package ba.unsa.etf.rpr.domain;
 
-import javafx.scene.control.DatePicker;
+
 
 import java.time.LocalDate;
 import java.util.Objects;
+//samo da ga git pokupi
 
 public class Iznajmljivanje implements Idable{
     private int id;

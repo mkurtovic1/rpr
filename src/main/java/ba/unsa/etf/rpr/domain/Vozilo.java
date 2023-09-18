@@ -1,7 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
-
+//samo da ga git pokupi
 public class Vozilo implements Idable{
     private int id;
     private String naziv;

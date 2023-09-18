@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
+//samo da ga git pokupi
 public class Korisnik implements Idable{
     private int id;
     private String ime;
