@@ -36,4 +36,8 @@ public class KorisnikManager {
     public List<Korisnik> getAll() throws Exception{
         return DaoFactory.korisnikDao().getAll();
     }
+    public Korisnik getById(int id) throws Exception{
+        return  DaoFactory.korisnikDao().getById(id);
+    }
+
 }

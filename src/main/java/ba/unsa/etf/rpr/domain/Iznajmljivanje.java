@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.domain;
 
-import java.util.Date;
+import javafx.scene.control.DatePicker;
+
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Iznajmljivanje implements Idable{
@@ -8,13 +10,13 @@ public class Iznajmljivanje implements Idable{
     private int klijentId;
     private int voziloId;
     private int cijena;
-    private Date preuzimanje;
-    private Date vracanje;
+    private LocalDate preuzimanje;
+    private LocalDate vracanje;
 
     public Iznajmljivanje() {
     }
 
-    public Iznajmljivanje(int klijentId, int voziloId, int cijena, Date preuzimanje, Date vracanje) {
+    public Iznajmljivanje(int klijentId, int voziloId, int cijena, LocalDate preuzimanje, LocalDate vracanje) {
         this.klijentId = klijentId;
         this.voziloId = voziloId;
         this.cijena = cijena;
@@ -54,19 +56,19 @@ public class Iznajmljivanje implements Idable{
         this.cijena = cijena;
     }
 
-    public Date getPreuzimanje() {
+    public LocalDate getPreuzimanje() {
         return preuzimanje;
     }
 
-    public void setPreuzimanje(Date preuzimanje) {
+    public void setPreuzimanje(LocalDate preuzimanje) {
         this.preuzimanje = preuzimanje;
     }
 
-    public Date getVracanje() {
+    public LocalDate getVracanje() {
         return vracanje;
     }
 
-    public void setVracanje(Date vracanje) {
+    public void setVracanje(LocalDate vracanje) {
         this.vracanje = vracanje;
     }
 

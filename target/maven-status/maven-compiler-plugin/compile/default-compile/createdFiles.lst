@@ -20,4 +20,3 @@ ba\unsa\etf\rpr\controllers\AddUpdateVoziloController.class
 ba\unsa\etf\rpr\dao\KorisnikDao.class
 ba\unsa\etf\rpr\dao\AbstractDao.class
 ba\unsa\etf\rpr\domain\Iznajmljivanje.class
-ba\unsa\etf\rpr\controllers\AddUpdateVoziloController$VoziloModel.class

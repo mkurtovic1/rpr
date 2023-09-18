@@ -21,6 +21,10 @@ import java.util.Optional;
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class GlavnaController {
+    public Button btnDodaj;
+    public Button btnIzmijeni;
+    public Button btnObrisi;
+    public Button btnIznajmi;
     private VoziloManager voziloManager=new VoziloManager();
     private Vozilo selectedVozilo;
     public void setVoziloManager(VoziloManager voziloManager){
@@ -130,30 +134,43 @@ public class GlavnaController {
         } catch (Exception e) {
             new Alert(Alert.AlertType.NONE, "Error loading vozilo.fxml", ButtonType.OK).show();
         }
+        refreshVozila();
     }
     public void dodajVozilo(ActionEvent actionEvent){
-
+        Vozilo novovozilo=new Vozilo();
         try {
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/vozilo.fxml"));
-            Stage stage=new Stage();
-            stage.setScene(new Scene(loader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.initStyle(StageStyle.UTILITY);
-            stage.setTitle("Editovanje i dodavanje vozila za iznajmljivanje");
-            stage.show();
 
-            Vozilo vozilo= new Vozilo();
-            vozilo.setNaziv(naziv.getText());
-            vozilo.setGorivo(gorivo.getText());
-            vozilo.setMjenjac(mjenjac.getText());
-            vozilo.setMaxbrputnika(Integer.parseInt(maxbrputnika.getText()));
-            vozilo.setCijenapodanu(Integer.parseInt(cijenapodanu.getText()));
-            vozilo.setBrojregtablica(brojregtablica.getText());
-            vozilo.setTip(tip.getText());
-            voziloManager.add(vozilo);
-            refreshVozila();
-        }catch (Exception e){
-            e.printStackTrace();
+            //((Stage)voziloScreen.getScene().getWindow()).hide();
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/vozilo.fxml"));
+            //get the controller associated with fxml
+
+            Parent root=loader.load();
+            AddUpdateVoziloController voziloController=loader.getController();
+            if(voziloController!=null){
+                voziloController.setVozilo(novovozilo);
+                Stage stage=new Stage();
+                stage.setTitle("Dodaj");
+                stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                stage.showAndWait();
+
+
+            }
+            else
+                System.err.println("Controller is null");
+            //loader.setController(voziloController);
+
+
+            // selectedVozilo=voziloController.getModifiedVozilo();
+
+
+
+            //refreshVozila();
+
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.NONE, "Error loading vozilo.fxml", ButtonType.OK).show();
         }
+        refreshVozila();
     }
 
     public void obrisiVozilo(ActionEvent actionEvent) throws Exception {
@@ -174,6 +191,43 @@ public class GlavnaController {
         }
         refreshVozila();
     }
+    public void iznajmiVozilo(ActionEvent actionEvent) throws  Exception{
+        Vozilo vozilo=tabelaVozila.getSelectionModel().getSelectedItem();
+        if(vozilo==null) return;
+        try {
+
+            //((Stage)voziloScreen.getScene().getWindow()).hide();
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/iznajmi.fxml"));
+            //get the controller associated with fxml
+
+            Parent root=loader.load();
+            IznajmiController iznajmiController=loader.getController();
+            if(iznajmiController!=null){
+                iznajmiController.setSelectedVozilo(vozilo);
+                Stage stage=new Stage();
+                stage.setTitle("Iznajmi vozilo");
+                stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                stage.showAndWait();
+
+            }
+            else
+                System.err.println("Controller is null");
+            //loader.setController(voziloController);
+
+
+            // selectedVozilo=voziloController.getModifiedVozilo();
+
+
+
+            //refreshVozila();
+
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.NONE, "Error loading iznajmi.fxml", ButtonType.OK).show();
+        }
+
+    }
+
 
     private void showAlert(Alert.AlertType alertType, String title, String contentText){
         Alert alert = new Alert(alertType);

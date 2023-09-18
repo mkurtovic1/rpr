@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.controllers;
 
 
 import ba.unsa.etf.rpr.business.VoziloManager;
+import ba.unsa.etf.rpr.dao.VoziloDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Vozilo;
 
 import javafx.collections.FXCollections;
@@ -15,7 +16,7 @@ import javafx.stage.Stage;
 
 public class AddUpdateVoziloController {
     private Vozilo modifiedVozilo;
-    private VoziloManager voziloManager;
+    private VoziloManager voziloManager=new VoziloManager();
 
     @FXML
     private TextField naziv;
@@ -32,6 +33,7 @@ public class AddUpdateVoziloController {
     private TextField cijenapodanu;
     @FXML
     private TextField brojregtablica;
+    ObservableList<String> tipovi=FXCollections.observableArrayList("tip1", "tip2", "tip3");
     @FXML
     private ComboBox<String> tip;
     @FXML
@@ -39,8 +41,12 @@ public class AddUpdateVoziloController {
     @FXML
     private Button btncancel;
 
+    private VoziloDaoSQLImpl dao;
 
-    public AddUpdateVoziloController(){
+
+    public AddUpdateVoziloController() throws Exception{
+        dao= VoziloDaoSQLImpl.getInstance();
+
 
     }
     @FXML
@@ -48,6 +54,7 @@ public class AddUpdateVoziloController {
         gorivo.setItems(goriva);
         mjenjac.setItems(mjenjaci);
         maxbrputnika.setItems(putnici);
+        tip.setItems(tipovi);
         System.out.println("Add and update vozilo initialized.");
         naziv.clear();
 
@@ -56,9 +63,14 @@ public class AddUpdateVoziloController {
     public void setVozilo(Vozilo vozilo){
         if(vozilo!=null){
             this.modifiedVozilo=vozilo;
+            this.modifiedVozilo.setId(vozilo.getId());
             naziv.setText(vozilo.getNaziv());
-            gorivo.setValue(vozilo.getGorivo());
-            mjenjac.setValue(vozilo.getMjenjac());
+            if (vozilo.getGorivo() != null && goriva.contains(vozilo.getGorivo())) {
+                gorivo.setValue(vozilo.getGorivo());
+            }
+            if (vozilo.getMjenjac() != null && mjenjaci.contains(vozilo.getMjenjac())) {
+                mjenjac.setValue(vozilo.getMjenjac());
+            }
             maxbrputnika.setValue(String.valueOf(vozilo.getMaxbrputnika()));
             cijenapodanu.setText(String.valueOf(vozilo.getCijenapodanu()));
             brojregtablica.setText(vozilo.getBrojregtablica());
@@ -83,13 +95,22 @@ public class AddUpdateVoziloController {
         Vozilo modifiedVozilo=getModifiedVozilo();
         if(modifiedVozilo!=null){
             try {
-                voziloManager.add(modifiedVozilo);
-                showAlert(Alert.AlertType.INFORMATION, "Succes", "Vozilo added successfully");
+                if(modifiedVozilo.getId()==0){
+                    voziloManager.add(modifiedVozilo);
+                    showAlert(Alert.AlertType.INFORMATION, "Succes", "Vozilo added successfully");
+                }else{
+                    voziloManager.update(modifiedVozilo);
+                    showAlert(Alert.AlertType.INFORMATION, "Succes", "Vozilo updated  successfully");
+                }
+
+
             }catch (Exception e){
                 showAlert(Alert.AlertType.ERROR, "Error", "Faild to add Vozilo"+e.getMessage());
             }
         }
+
     }
+
     @FXML
     private void cancelForm(ActionEvent event){
         System.out.println("Cancel button clicked.");
