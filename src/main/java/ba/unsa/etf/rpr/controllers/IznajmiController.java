@@ -29,7 +29,7 @@ public class IznajmiController {
     public Button izracunajCijenu;
     private IznajmljivanjeDaoSQLImpl dao;
 
-
+    public double ukupnacijena=0;
 
     public IznajmiController() throws Exception{
         dao= IznajmljivanjeDaoSQLImpl.getInstance();
@@ -52,7 +52,9 @@ public class IznajmiController {
         Iznajmljivanje iznajmljivanje=new Iznajmljivanje();
         iznajmljivanje.setPreuzimanje(preuzimanje.getValue());
         iznajmljivanje.setVracanje(vracanje.getValue());
-        iznajmljivanje.setIdvozilo(selectedVozilo.getId());
+        iznajmljivanje.setIdvozila(selectedVozilo.getId());
+
+        iznajmljivanje.setCijena((int) ukupnacijena);
 
         Iznajmljivanje addedIznajmljivanje=iznajmljivanjeManager.add(iznajmljivanje);
         System.out.println("Iznajmljivanje added "+addedIznajmljivanje);
@@ -79,8 +81,9 @@ public class IznajmiController {
             return;
         }
         double pricePerDay=selectedVozilo.getCijenapodanu();
-        long numberOfDays=  (ChronoUnit.DAYS.between(preuzimanjeDate, vracanjeDate) + 1);;
-        double totalPrice=pricePerDay*numberOfDays; //proba
+        long numberOfDays= (ChronoUnit.DAYS.between(preuzimanjeDate, vracanjeDate) + 1);;
+        double totalPrice= (pricePerDay*numberOfDays); //proba
         ukupno.setText(String.format("%.2f",totalPrice));
+        ukupnacijena=totalPrice;
     }
 }

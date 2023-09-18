@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Iznajmljivanje implements Idable{
     private int id;
-    private int idvozilo;
+    private int idvozila;
     private int cijena;
     private LocalDate preuzimanje;
     private LocalDate vracanje;
@@ -15,9 +15,9 @@ public class Iznajmljivanje implements Idable{
     public Iznajmljivanje() {
     }
 
-    public Iznajmljivanje(int id, int idvozilo, int cijena, LocalDate preuzimanje, LocalDate vracanje) {
+    public Iznajmljivanje(int id, int idvozila, int cijena, LocalDate preuzimanje, LocalDate vracanje) {
         this.id = id;
-        this.idvozilo = idvozilo;
+        this.idvozila = idvozila;
         this.cijena = cijena;
         this.preuzimanje = preuzimanje;
         this.vracanje = vracanje;
@@ -31,12 +31,12 @@ public class Iznajmljivanje implements Idable{
         this.id = id;
     }
 
-    public int getIdvozilo() {
-        return idvozilo;
+    public int getIdvozila() {
+        return idvozila;
     }
 
-    public void setIdvozilo(int idvozilo) {
-        this.idvozilo = idvozilo;
+    public void setIdvozila(int idvozila) {
+        this.idvozila = idvozila;
     }
 
     public int getCijena() {
@@ -68,19 +68,19 @@ public class Iznajmljivanje implements Idable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Iznajmljivanje that = (Iznajmljivanje) o;
-        return id == that.id && idvozilo == that.idvozilo && cijena == that.cijena && Objects.equals(preuzimanje, that.preuzimanje) && Objects.equals(vracanje, that.vracanje);
+        return id == that.id && idvozila == that.idvozila && cijena == that.cijena && Objects.equals(preuzimanje, that.preuzimanje) && Objects.equals(vracanje, that.vracanje);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, idvozilo, cijena, preuzimanje, vracanje);
+        return Objects.hash(id, idvozila, cijena, preuzimanje, vracanje);
     }
 
     @Override
     public String toString() {
         return "Iznajmljivanje{" +
                 "id=" + id +
-                ", idvozilo=" + idvozilo +
+                ", idvozila=" + idvozila +
                 ", cijena=" + cijena +
                 ", preuzimanje=" + preuzimanje +
                 ", vracanje=" + vracanje +
