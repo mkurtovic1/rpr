@@ -1,7 +1,9 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.KorisnikManager;
 import ba.unsa.etf.rpr.business.VoziloManager;
 import ba.unsa.etf.rpr.dao.VoziloDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.Korisnik;
 import ba.unsa.etf.rpr.domain.Vozilo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,7 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
 
 import java.io.IOException;
 import java.util.Optional;
@@ -25,7 +27,9 @@ public class GlavnaController {
     public Button btnIzmijeni;
     public Button btnObrisi;
     public Button btnIznajmi;
+    public Button btnlogin;
     private VoziloManager voziloManager=new VoziloManager();
+    private KorisnikManager korisnikManager=new KorisnikManager();
     private Vozilo selectedVozilo;
     public void setVoziloManager(VoziloManager voziloManager){
         this.voziloManager=voziloManager;
@@ -236,4 +240,21 @@ public class GlavnaController {
         alert.showAndWait();
     }
 
+    public void loginAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/loginforma.fxml"));
+            //get the controller associated with fxml
+
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Login form");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.showAndWait();
+
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.NONE, "Error loading loginforma.fxml", ButtonType.OK).show();
+        }
+    }
 }

@@ -8,9 +8,8 @@ public class Korisnik implements Idable{
     private String prezime;
     private String lozinka;
     private String email;
-    private int telefon;
-    private int brojIznajmljivanja;
-    private int brojUnajmljivanja;
+
+
 
     public int getId() {
         return id;
@@ -28,17 +27,7 @@ public class Korisnik implements Idable{
         return email;
     }
 
-    public int getTelefon() {
-        return telefon;
-    }
 
-    public int getBrojIznajmljivanja() {
-        return brojIznajmljivanja;
-    }
-
-    public int getBrojUnajmljivanja() {
-        return brojUnajmljivanja;
-    }
 
 
     public void setId(int id) {
@@ -65,26 +54,14 @@ public class Korisnik implements Idable{
         this.email = email;
     }
 
-    public void setTelefon(int telefon) {
-        this.telefon = telefon;
-    }
 
-    public void setBrojIznajmljivanja(int brojIznajmljivanja) {
-        this.brojIznajmljivanja = brojIznajmljivanja;
-    }
-
-    public void setBrojUnajmljivanja(int brojUnajmljivanja) {
-        this.brojUnajmljivanja = brojUnajmljivanja;
-    }
 
     public Korisnik(String ime, String prezime, String lozinka, String email, int telefon, int brojIznajmljivanja, int brojUnajmljivanja) {
         this.ime=ime;
         this.prezime = prezime;
         this.lozinka = lozinka;
         this.email = email;
-        this.telefon = telefon;
-        this.brojIznajmljivanja = brojIznajmljivanja;
-        this.brojUnajmljivanja = brojUnajmljivanja;
+
     }
 
     public Korisnik() {
@@ -92,7 +69,7 @@ public class Korisnik implements Idable{
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ime, prezime, lozinka, email, telefon, brojIznajmljivanja, brojUnajmljivanja);
+        return Objects.hash(id, ime, prezime, lozinka, email);
     }
 
     @Override
