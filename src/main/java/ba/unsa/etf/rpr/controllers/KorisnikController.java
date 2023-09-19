@@ -9,6 +9,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * JavaFX controller for Korisnik management
+ *
+ * @author MKurtovic
+ */
+
 public class KorisnikController {
     public Button btnlogin;
     @FXML
