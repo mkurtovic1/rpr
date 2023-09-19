@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
-import ba.unsa.etf.rpr.business.KorisnikManager;
+
 import ba.unsa.etf.rpr.business.VoziloManager;
 import ba.unsa.etf.rpr.dao.VoziloDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Vozilo;
@@ -19,6 +19,12 @@ import java.io.IOException;
 import java.util.Optional;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
+
+/**
+ * JavaFX controller for Glavna  management
+ *
+ * @author MKurtovic
+ */
 
 public class GlavnaController {
     public Button btnDodaj;
