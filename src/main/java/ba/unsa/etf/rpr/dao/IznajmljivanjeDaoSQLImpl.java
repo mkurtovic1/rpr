@@ -9,7 +9,10 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.TreeMap;
-
+/**
+ * MySQL's implementation of the DAO
+ * @author MKurtovic
+ */
 public class IznajmljivanjeDaoSQLImpl extends AbstractDao<Iznajmljivanje> implements IznajmljivanjeDao {
     private static IznajmljivanjeDaoSQLImpl instance=null;
     public IznajmljivanjeDaoSQLImpl() {
