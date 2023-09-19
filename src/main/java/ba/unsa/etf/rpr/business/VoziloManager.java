@@ -4,6 +4,11 @@ import ba.unsa.etf.rpr.dao.Dao;
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.dao.VoziloDao;
 import ba.unsa.etf.rpr.domain.Vozilo;
+/**
+ * Business Logic Layer for Vozilo
+ *
+ * @author MKurtovic
+ */
 
 import java.util.List;
 
