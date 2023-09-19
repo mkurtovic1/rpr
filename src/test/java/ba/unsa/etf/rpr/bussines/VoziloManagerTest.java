@@ -28,4 +28,11 @@ public class VoziloManagerTest {
         assertEquals(voziloToAdd, addedVozilo);
         verify(voziloDaoSQL, times(1)).add(voziloToAdd);
     }
+    @Test
+    public void testDeleteVozilo() throws Exception {
+        int voziloIdToDelete =1;
+        voziloManager.delete(voziloIdToDelete);
+
+        verify(voziloDaoSQL, times(1)).delete(voziloIdToDelete);
+    }
 }
