@@ -12,7 +12,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
+/**
+ * JavaFX controller for Add and Update Vozilo management
+ *
+ * @author MKurtovic
+ */
 
 public class AddUpdateVoziloController {
     private Vozilo modifiedVozilo;
