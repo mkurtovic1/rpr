@@ -6,6 +6,10 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+/**
+ * MySQL's implementation of the DAO
+ * @author MKurtovic
+ */
 
 public class VoziloDaoSQLImpl extends AbstractDao<Vozilo> implements VoziloDao {
     private static VoziloDaoSQLImpl instance=null;
