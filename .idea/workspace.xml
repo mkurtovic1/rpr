@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="created beforeeach test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ba/unsa/etf/rpr/bussines/VoziloManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="created deletetest for vozilo">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/business/VoziloManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/business/VoziloManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +122,7 @@
       <workItem from="1694977664897" duration="14838000" />
       <workItem from="1695030313955" duration="7597000" />
       <workItem from="1695046660179" duration="13643000" />
-      <workItem from="1695073492699" duration="9479000" />
+      <workItem from="1695073492699" duration="9813000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -357,7 +356,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695082985527</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="created addtest for vozilo">
+      <option name="closed" value="true" />
+      <created>1695083473057</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1695083473057</updated>
+    </task>
+    <task id="LOCAL-00031" summary="created deletetest for vozilo">
+      <option name="closed" value="true" />
+      <created>1695083711801</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1695083711801</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,6 +419,8 @@
     <MESSAGE value="updated to jupiter api latest version" />
     <MESSAGE value="deleted some attributes" />
     <MESSAGE value="created beforeeach test" />
-    <option name="LAST_COMMIT_MESSAGE" value="created beforeeach test" />
+    <MESSAGE value="created addtest for vozilo" />
+    <MESSAGE value="created deletetest for vozilo" />
+    <option name="LAST_COMMIT_MESSAGE" value="created deletetest for vozilo" />
   </component>
 </project>
