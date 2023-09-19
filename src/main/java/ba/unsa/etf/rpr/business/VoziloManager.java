@@ -23,7 +23,4 @@ public class VoziloManager {
     public Vozilo add(Vozilo vozilo) throws Exception{
         return DaoFactory.voziloDao().add(vozilo);
     }
-    public List<Vozilo> searchVozilo(String text) throws Exception{
-        return DaoFactory.voziloDao().searchByText(text);
-    }
 }
