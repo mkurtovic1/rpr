@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 /**
- * Hello world!
+ * Main class for starting an application
  *
  */
 public class App extends Application

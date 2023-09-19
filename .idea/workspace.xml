@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="test for add iznjamljivanje">
+    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="test for  iznjamljivanje">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +123,7 @@
       <workItem from="1694977664897" duration="14838000" />
       <workItem from="1695030313955" duration="7597000" />
       <workItem from="1695046660179" duration="13643000" />
-      <workItem from="1695073492699" duration="10199000" />
+      <workItem from="1695073492699" duration="10984000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -387,7 +389,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695084152900</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="test for  iznjamljivanje">
+      <option name="closed" value="true" />
+      <created>1695084623404</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1695084623404</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,6 +448,18 @@
     <MESSAGE value="created deletetest for vozilo" />
     <MESSAGE value="deleted method that i didn't use" />
     <MESSAGE value="test for add iznjamljivanje" />
-    <option name="LAST_COMMIT_MESSAGE" value="test for add iznjamljivanje" />
+    <MESSAGE value="test for  iznjamljivanje" />
+    <option name="LAST_COMMIT_MESSAGE" value="test for  iznjamljivanje" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ba/unsa/etf/rpr/bussines/IznajmljivanjeManagerTest.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
