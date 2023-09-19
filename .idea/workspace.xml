@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="test for  iznjamljivanje">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/App.java" afterDir="false" />
+    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="created javadoc for Iznajmljivanje.java.java">
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +121,7 @@
       <workItem from="1694977664897" duration="14838000" />
       <workItem from="1695030313955" duration="7597000" />
       <workItem from="1695046660179" duration="13643000" />
-      <workItem from="1695073492699" duration="10984000" />
+      <workItem from="1695073492699" duration="11871000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -397,7 +395,39 @@
       <option name="project" value="LOCAL" />
       <updated>1695084623404</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="created javadoc for app and Idable.java">
+      <option name="closed" value="true" />
+      <created>1695085044719</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1695085044719</updated>
+    </task>
+    <task id="LOCAL-00036" summary="created javadoc for Vozilo.java">
+      <option name="closed" value="true" />
+      <created>1695085154784</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1695085154784</updated>
+    </task>
+    <task id="LOCAL-00037" summary="created javadoc for Korisnik.java">
+      <option name="closed" value="true" />
+      <created>1695085186639</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1695085186639</updated>
+    </task>
+    <task id="LOCAL-00038" summary="created javadoc for Iznajmljivanje.java.java">
+      <option name="closed" value="true" />
+      <created>1695085243531</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1695085243531</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,10 +454,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="svašta ponešto" />
-    <MESSAGE value="Vozilo:dao, sql, fxml" />
-    <MESSAGE value="ubaceni itemsi u gorivo, mjenjac i maxbrputnika combobox" />
-    <MESSAGE value="added KorisnikController.java and loginforma.fxml" />
     <MESSAGE value="davno dodane domain klase, sad samo da ih git pokupi" />
     <MESSAGE value="created loginforma.fxml and KorisnikController.java with loginAction method" />
     <MESSAGE value="created cancelAction" />
@@ -449,7 +475,11 @@
     <MESSAGE value="deleted method that i didn't use" />
     <MESSAGE value="test for add iznjamljivanje" />
     <MESSAGE value="test for  iznjamljivanje" />
-    <option name="LAST_COMMIT_MESSAGE" value="test for  iznjamljivanje" />
+    <MESSAGE value="created javadoc for app and Idable.java" />
+    <MESSAGE value="created javadoc for Vozilo.java" />
+    <MESSAGE value="created javadoc for Korisnik.java" />
+    <MESSAGE value="created javadoc for Iznajmljivanje.java.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="created javadoc for Iznajmljivanje.java.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
