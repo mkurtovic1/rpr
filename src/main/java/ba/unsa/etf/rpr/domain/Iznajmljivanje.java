@@ -4,7 +4,11 @@ package ba.unsa.etf.rpr.domain;
 
 import java.time.LocalDate;
 import java.util.Objects;
-
+/**
+ * List of possible categories for Iznajmljivanje
+ *
+ * @author MKurtovic
+ */
 public class Iznajmljivanje implements Idable{
     private int id;
     private int idvozila;
