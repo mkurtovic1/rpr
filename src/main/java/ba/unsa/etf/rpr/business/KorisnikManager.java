@@ -5,6 +5,11 @@ import ba.unsa.etf.rpr.domain.Korisnik;
 
 import java.util.List;
 
+/**
+ * Business Logic Layer for korisnik
+ *
+ * @author MKurtovic
+ */
 public class KorisnikManager {
     public void validateKorisnikName(String name) throws Exception {
         if(name==null || name.length()>15 || name.length()<3)
