@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="updated to jupiter api latest version">
+    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="created beforeeach test">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ba/unsa/etf/rpr/bussines/VoziloManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/domain/Korisnik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/domain/Korisnik.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ba/unsa/etf/rpr/bussines/KorisnikManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ba/unsa/etf/rpr/bussines/KorisnikManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +123,7 @@
       <workItem from="1694977664897" duration="14838000" />
       <workItem from="1695030313955" duration="7597000" />
       <workItem from="1695046660179" duration="13643000" />
-      <workItem from="1695073492699" duration="8854000" />
+      <workItem from="1695073492699" duration="9479000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -343,7 +341,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695082292638</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="deleted some attributes">
+      <option name="closed" value="true" />
+      <created>1695082852858</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1695082852858</updated>
+    </task>
+    <task id="LOCAL-00029" summary="created beforeeach test">
+      <option name="closed" value="true" />
+      <created>1695082985527</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1695082985527</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,6 +402,8 @@
     <MESSAGE value="description of project in README.md" />
     <MESSAGE value="creating tests for KorisnikManager" />
     <MESSAGE value="updated to jupiter api latest version" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated to jupiter api latest version" />
+    <MESSAGE value="deleted some attributes" />
+    <MESSAGE value="created beforeeach test" />
+    <option name="LAST_COMMIT_MESSAGE" value="created beforeeach test" />
   </component>
 </project>
