@@ -5,6 +5,11 @@ import ba.unsa.etf.rpr.domain.Iznajmljivanje;
 
 
 import java.util.List;
+/**
+ * Business Logic Layer for Iznajmljivanje
+ *
+ * @author MKurtovic
+ */
 
 public class IznajmljivanjeManager {
     public List<Iznajmljivanje> getAll() throws Exception{
