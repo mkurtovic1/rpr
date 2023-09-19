@@ -6,8 +6,13 @@ import ba.unsa.etf.rpr.dao.IznajmljivanjeDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.KorisnikDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Iznajmljivanje;
 import ba.unsa.etf.rpr.domain.Korisnik;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -20,6 +25,20 @@ public class IznajmljivanjeManagerTest {
     private IznajmljivanjeDaoSQLImpl iznajmljivanjeDaoSQL;
     private List<Iznajmljivanje> iznajmljivanjeList;
 
+    @BeforeEach
+    public void initializeObjestsWeNeed(){
+        iznajmljivanjeManager= Mockito.mock(IznajmljivanjeManager.class);
+        iznajmljivanje=new Iznajmljivanje();
+        iznajmljivanje.setId(2);
+        iznajmljivanje.setIdvozila(2);
+        iznajmljivanje.setCijena(50);
+        iznajmljivanje.setPreuzimanje(LocalDate.ofEpochDay(2023-10-15));
+        iznajmljivanje.setVracanje(LocalDate.ofEpochDay(2023-11-01));
+
+        iznajmljivanjeDaoSQL=Mockito.mock(iznajmljivanjeDaoSQL.getClass());
+        iznajmljivanjeList=new ArrayList<>();
+
+    }
     @Test
     public void testAddIznajmljivanje() throws Exception {
 

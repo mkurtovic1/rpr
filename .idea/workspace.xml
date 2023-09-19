@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="created deletetest for vozilo">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/business/VoziloManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/business/VoziloManager.java" afterDir="false" />
+    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="test for add iznjamljivanje">
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +121,7 @@
       <workItem from="1694977664897" duration="14838000" />
       <workItem from="1695030313955" duration="7597000" />
       <workItem from="1695046660179" duration="13643000" />
-      <workItem from="1695073492699" duration="9813000" />
+      <workItem from="1695073492699" duration="10199000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -372,7 +371,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695083711801</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="deleted method that i didn't use">
+      <option name="closed" value="true" />
+      <created>1695083787891</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1695083787891</updated>
+    </task>
+    <task id="LOCAL-00033" summary="test for add iznjamljivanje">
+      <option name="closed" value="true" />
+      <created>1695084152900</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1695084152900</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,6 +436,8 @@
     <MESSAGE value="created beforeeach test" />
     <MESSAGE value="created addtest for vozilo" />
     <MESSAGE value="created deletetest for vozilo" />
-    <option name="LAST_COMMIT_MESSAGE" value="created deletetest for vozilo" />
+    <MESSAGE value="deleted method that i didn't use" />
+    <MESSAGE value="test for add iznjamljivanje" />
+    <option name="LAST_COMMIT_MESSAGE" value="test for add iznjamljivanje" />
   </component>
 </project>
