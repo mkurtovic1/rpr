@@ -56,7 +56,7 @@ public class Korisnik implements Idable{
 
 
 
-    public Korisnik(String ime, String prezime, String lozinka, String email, int telefon, int brojIznajmljivanja, int brojUnajmljivanja) {
+    public Korisnik(String ime, String prezime, String lozinka, String email) {
         this.ime=ime;
         this.prezime = prezime;
         this.lozinka = lozinka;
