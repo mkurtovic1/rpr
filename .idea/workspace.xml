@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="created connection with .properties.sample">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="9b6e9c05-defe-4fca-b235-8a9a1e7fa544" name="Changes" comment="description of project in README.md">
       <change beforePath="$PROJECT_DIR$/../quote-maker" beforeDir="false" afterPath="$PROJECT_DIR$/../quote-maker" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +121,7 @@
       <workItem from="1694977664897" duration="14838000" />
       <workItem from="1695030313955" duration="7597000" />
       <workItem from="1695046660179" duration="13643000" />
-      <workItem from="1695073492699" duration="7568000" />
+      <workItem from="1695073492699" duration="7947000" />
     </task>
     <task id="LOCAL-00001" summary="svašta ponešto">
       <option name="closed" value="true" />
@@ -308,7 +307,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695081195667</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="description of project in README.md">
+      <option name="closed" value="true" />
+      <created>1695081577971</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1695081577971</updated>
+    </task>
+    <task id="LOCAL-00025" summary="description of project in README.md">
+      <option name="closed" value="true" />
+      <created>1695081685415</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1695081685415</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +365,7 @@
     <MESSAGE value="created .properties" />
     <MESSAGE value="created connection with .properties" />
     <MESSAGE value="created connection with .properties.sample" />
-    <option name="LAST_COMMIT_MESSAGE" value="created connection with .properties.sample" />
+    <MESSAGE value="description of project in README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="description of project in README.md" />
   </component>
 </project>
