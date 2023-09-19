@@ -1,7 +1,11 @@
 package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
-//samo da ga git pokupi
+/**
+ * List of possible categories for Korisnik
+ *
+ * @author MKurtovic
+ */
 public class Korisnik implements Idable{
     private int id;
     private String ime;
