@@ -14,6 +14,11 @@ import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+/**
+ * JavaFX controller for Iznajmi management
+ *
+ * @author MKurtovic
+ */
 
 public class IznajmiController {
     private IznajmljivanjeManager iznajmljivanjeManager=new IznajmljivanjeManager();
